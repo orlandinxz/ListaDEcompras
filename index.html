@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galáxia Cartoon Amarela - Lista de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="space-overlay"></div>
+        <div class="starfield"></div>
+        <div class="nebula nebula-left"></div>
+        <div class="nebula nebula-right"></div>
+        <div class="planet planet-yellow"></div>
+        <div class="planet planet-blue"></div>
+    </div>
+
+    <div class="app-layout">
+        <div class="character character-left">
+            <div class="character-head"></div>
+            <div class="character-eye eye-left"></div>
+            <div class="character-eye eye-right"></div>
+            <div class="character-mouth"></div>
+            <div class="character-body"></div>
+            <div class="character-arm arm-left"></div>
+            <div class="character-arm arm-right"></div>
+        </div>
+
+        <article class="app-panel">
+            <header class="app-header">
+                <div class="header-badge">GALÁXIA</div>
+                <h1>Lista de Compras</h1>
+                <p>Uma missão espacial divertida com a turma amarela.</p>
+            </header>
+
+            <section class="app-content">
+                <div class="top-controls">
+                    <div class="input-box">
+                        <input
+                            type="text"
+                            id="itemInput"
+                            class="app-input"
+                            placeholder="Digite o item da missão..."
+                            autocomplete="off"
+                        />
+                        <span class="input-highlight"></span>
+                    </div>
+                    <button id="addBtn" class="btn btn-primary">
+                        <span>Adicionar</span>
+                    </button>
+                </div>
+
+                <div class="filters-row">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="pendentes">Pendentes</button>
+                    <button class="filter-btn" data-filter="concluidos">Concluídos</button>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <span>Total</span>
+                        <strong id="totalCount">0</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>Concluídos</span>
+                        <strong id="completedCount">0</strong>
+                    </div>
+                </div>
+
+                <ul id="listItems" class="list-items"></ul>
+
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-emoji">🌟</div>
+                    <p>Lista vazia!</p>
+                    <small>Adicione itens para enviar a turma amarelinha à galáxia.</small>
+                </div>
+
+                <div class="footer-actions">
+                    <button id="clearBtn" class="btn btn-secondary">Limpar Concluídos</button>
+                    <button id="deleteAllBtn" class="btn btn-danger">Limpar Tudo</button>
+                </div>
+            </section>
+        </article>
+
+        <div class="character character-right">
+            <div class="character-head"></div>
+            <div class="character-eye eye-left"></div>
+            <div class="character-eye eye-right"></div>
+            <div class="character-mouth"></div>
+            <div class="character-body"></div>
+            <div class="character-arm arm-left"></div>
+            <div class="character-arm arm-right"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-window">
+            <h2 id="modalTitle">Confirmação</h2>
+            <p id="modalMessage">Deseja continuar?</p>
+            <div class="modal-actions">
+                <button id="modalConfirm" class="modal-btn modal-confirm">Sim</button>
+                <button id="modalCancel" class="modal-btn modal-cancel">Não</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <div id="particleContainer" class="particle-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
